@@ -1,0 +1,3 @@
+Ejecutar: sudo crontab -e y agregar:
+
+* 8-17 * * * python3 /home/pi/ProyectoMosquito/takePicture_Raspi.py
