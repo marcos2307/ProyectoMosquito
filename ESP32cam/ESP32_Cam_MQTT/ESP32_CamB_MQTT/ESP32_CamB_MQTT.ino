@@ -8,19 +8,19 @@ DynamicJsonDocument CONFIG(2048);
 
 // Update these with WiFi network values
 // Update these with WiFi network values
-const char* ssid = "Redmi";
-const char* password = "marqueso";
-const char* mqtt_server="192.168.43.248"; //your mqtt server ip
+const char* ssid = "Perceptron";
+const char* password = "CNN0840152355";
+const char* mqtt_server="192.168.2.15"; //your mqtt server ip
 
-const char* HostName = "ESP32CAM_A";
+const char* HostName = "ESP32CAM_B";
 const char* topic_PHOTO = "TakeAPicture";
 const char* topic_CONFIG = "JSONConfig";
-const char* topic_UP = "PICTURE_A";
+const char* topic_UP = "PICTURE_B";
 const char* mqttUser = "USER";
 const char* mqttPassword = "PASSWORD";
 
 #define uS_TO_S_FACTOR 1000000  //Conversion factor for micro seconds to seconds
-#define TIME_TO_SLEEP  300
+#define TIME_TO_SLEEP  60
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -138,16 +138,15 @@ void setup() {
   setup_wifi();
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
-  take_picture();
   esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);
+  reconnect();
+  take_picture();
   Serial.println("Setup ESP32 to sleep for every " + String(TIME_TO_SLEEP) +
   " Seconds");
   //Go to sleep now
+  delay(10000);
   esp_deep_sleep_start();
 }
 void loop() {
-  if (!client.connected()) {
-    reconnect();
-  }
-  client.loop();
+
 }

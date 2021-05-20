@@ -10,7 +10,7 @@ def on_message(client, userdata, msg):
     f.write(msg.payload)
     f.close()
 
-broker = '192.168.43.248'
+broker = '192.168.2.15'
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
