@@ -27,6 +27,5 @@ client.connect(broker)
 f=open("/home/pi/Pictures/muestra" + d + t + ".jpg", "rb") #3.7kiB in same folder
 fileContent = f.read()
 byteArr = bytearray(fileContent)
-client.publish("Raspi/RaspiA",byteArr,0)
+client.publish("Raspi/Raspi_B",byteArr,0)
 
-client.loop_forever()
