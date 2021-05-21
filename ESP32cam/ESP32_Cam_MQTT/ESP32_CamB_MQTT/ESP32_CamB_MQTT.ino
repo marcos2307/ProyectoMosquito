@@ -12,15 +12,15 @@ const char* ssid = "Perceptron";
 const char* password = "CNN0840152355";
 const char* mqtt_server="192.168.2.15"; //your mqtt server ip
 
-const char* HostName = "ESP32CAM_B";
+const char* HostName = "ESP_B";
 const char* topic_PHOTO = "TakeAPicture";
 const char* topic_CONFIG = "JSONConfig";
-const char* topic_UP = "PICTURE_B";
-const char* mqttUser = "USER";
+const char* topic_UP = "ESP/ESP_B";
+const char* mqttUser = "ESP_B";
 const char* mqttPassword = "PASSWORD";
 
 #define uS_TO_S_FACTOR 1000000  //Conversion factor for micro seconds to seconds
-#define TIME_TO_SLEEP  60
+#define TIME_TO_SLEEP  300
 
 WiFiClient espClient;
 PubSubClient client(espClient);
