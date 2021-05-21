@@ -133,6 +133,7 @@ void reconnect() {
   }
 }
 void setup() {
+  delay(30000); 
   Serial.begin(115200);
   camera_init();
   setup_wifi();
