@@ -20,7 +20,7 @@ const char* mqttUser = "ESP_A";
 const char* mqttPassword = "PASSWORD";
 
 #define uS_TO_S_FACTOR 1000000  //Conversion factor for micro seconds to seconds
-#define TIME_TO_SLEEP  300
+#define TIME_TO_SLEEP  185
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -145,6 +145,7 @@ void setup() {
   Serial.println("Setup ESP32 to sleep for every " + String(TIME_TO_SLEEP) +
   " Seconds");
   //Go to sleep now
+  delay(30000)
   esp_deep_sleep_start();
 }
 void loop() {

@@ -29,3 +29,4 @@ fileContent = f.read()
 byteArr = bytearray(fileContent)
 client.publish("Raspi/Raspi_B",byteArr,0)
 
+client.loop_forever()

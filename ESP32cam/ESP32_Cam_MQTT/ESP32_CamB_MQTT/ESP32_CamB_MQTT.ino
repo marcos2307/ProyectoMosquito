@@ -20,7 +20,7 @@ const char* mqttUser = "ESP_B";
 const char* mqttPassword = "PASSWORD";
 
 #define uS_TO_S_FACTOR 1000000  //Conversion factor for micro seconds to seconds
-#define TIME_TO_SLEEP  300
+#define TIME_TO_SLEEP  185
 
 WiFiClient espClient;
 PubSubClient client(espClient);
