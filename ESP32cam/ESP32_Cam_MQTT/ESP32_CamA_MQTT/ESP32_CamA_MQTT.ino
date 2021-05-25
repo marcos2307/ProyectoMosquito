@@ -12,11 +12,11 @@ const char* ssid = "Perceptron";
 const char* password = "CNN0840152355";
 const char* mqtt_server="192.168.2.15"; //your mqtt server ip
 
-const char* HostName = "ESP_A";
+const char* HostName = "ESP_A"; //Si se agregan mas dispositivos cambiar el nombre de host
 const char* topic_PHOTO = "TakeAPicture";
 const char* topic_CONFIG = "JSONConfig";
-const char* topic_UP = "ESP/ESP_A";
-const char* mqttUser = "ESP_A";
+const char* topic_UP = "ESP/ESP_A"; //Si se agregan mas dispositivos cambiar el topic
+const char* mqttUser = "ESP_A"; //Si se agregan mas dispositivos cambiar el nombre de mqttUser
 const char* mqttPassword = "PASSWORD";
 
 #define uS_TO_S_FACTOR 1000000  //Conversion factor for micro seconds to seconds
@@ -145,7 +145,7 @@ void setup() {
   Serial.println("Setup ESP32 to sleep for every " + String(TIME_TO_SLEEP) +
   " Seconds");
   //Go to sleep now
-  delay(30000);
+  delay(30000); //Este delay se pone para desfasar del ESP32_B, en el cual figura al inicio del setup().
   esp_deep_sleep_start();
 }
 void loop() {

@@ -7,16 +7,15 @@ DynamicJsonDocument CONFIG(2048);
 #define MQTT_MAX_PACKET_SIZE 500000
 
 // Update these with WiFi network values
-// Update these with WiFi network values
 const char* ssid = "Perceptron";
 const char* password = "CNN0840152355";
 const char* mqtt_server="192.168.2.15"; //your mqtt server ip
 
-const char* HostName = "ESP_B";
+const char* HostName = "ESP_B";  //Si se agregan mas dispositivos cambiar el nombre de host
 const char* topic_PHOTO = "TakeAPicture";
 const char* topic_CONFIG = "JSONConfig";
-const char* topic_UP = "ESP/ESP_B";
-const char* mqttUser = "ESP_B";
+const char* topic_UP = "ESP/ESP_B"; //Si se agregan mas dispositivos cambiar el topic
+const char* mqttUser = "ESP_B"; //Si se agregan mas dispositivos cambiar el nombre de mqttUser
 const char* mqttPassword = "PASSWORD";
 
 #define uS_TO_S_FACTOR 1000000  //Conversion factor for micro seconds to seconds
@@ -133,7 +132,7 @@ void reconnect() {
   }
 }
 void setup() {
-  delay(30000); 
+  delay(30000); //Este delay se pone para desfasar del ESP32_A, en el cual figura antes de entrar en modo sleep.
   Serial.begin(115200);
   camera_init();
   setup_wifi();
