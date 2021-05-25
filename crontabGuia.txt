@@ -1,3 +1,9 @@
-Ejecutar: sudo crontab -e y agregar:
+1. Instalar paho-mqtt para el superusuario:
+sudo pip3 install paho-mqtt
+(por alguna razon cron no encuentra el paho de user)
 
-*/5 8-17 * * * python3 /home/pi/ProyectoMosquito/takePicture_Raspi.py
+2. Ejecutar: sudo crontab -e y agregar:
+
+*/5 8-16 * * * python3 /home/pi/ProyectoMosquito/takePicture_Raspi_A.py #en el rasbperry A, cada 5 min desde el min 0
+1-59/5 8-16 * * * python3 /home/pi/ProyectoMosquito/takePicture_Raspi_B.py #en el rasbperry B, cada 5 min desde el min 1
+
