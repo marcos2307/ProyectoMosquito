@@ -145,7 +145,7 @@ void setup() {
   Serial.println("Setup ESP32 to sleep for every " + String(TIME_TO_SLEEP) +
   " Seconds");
   //Go to sleep now
-  delay(30000)
+  delay(30000);
   esp_deep_sleep_start();
 }
 void loop() {
