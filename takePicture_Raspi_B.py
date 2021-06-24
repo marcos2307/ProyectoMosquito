@@ -18,7 +18,7 @@ def on_connect(client, userdata, flags, rc):
 def on_publish(mosq, userdata, mid):
     mosq.disconnect()
     
-broker = '192.168.2.15'
+broker = '192.168.2.18'
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_publish = on_publish

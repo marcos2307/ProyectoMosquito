@@ -9,7 +9,7 @@ DynamicJsonDocument CONFIG(2048);
 // Update these with WiFi network values
 const char* ssid = "Perceptron";
 const char* password = "CNN0840152355";
-const char* mqtt_server="192.168.2.15"; //your mqtt server ip
+const char* mqtt_server="192.168.2.18"; //your mqtt server ip
 
 const char* HostName = "ESP_B";  //Si se agregan mas dispositivos cambiar el nombre de host
 const char* topic_PHOTO = "TakeAPicture";
@@ -37,7 +37,7 @@ void callback(String topic, byte* message, unsigned int length) {
     deserializeJson(CONFIG, messageTemp);
     Serial.println(messageTemp);
     sensor_t * s = esp_camera_sensor_get();
-    s->set_framesize(s, FRAMESIZE_UXGA); //QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
+    s->set_framesize(s, FRAMESIZE_VGA); //QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
     s->set_vflip(s, CONFIG["vflip"]); //0 - 1
     s->set_hmirror(s, CONFIG["hmirror"]); //0 - 1
     s->set_colorbar(s, CONFIG["colorbar"]); //0 - 1
